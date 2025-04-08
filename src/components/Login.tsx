@@ -16,6 +16,7 @@ export default function Login() {
     script.onload = () => setIsScriptLoaded(true);
     document.head.appendChild(script);
   };
+  
 
   const handleCredentialResponse = (response: any) => {
     console.log("Google login response:", response);
@@ -52,10 +53,13 @@ export default function Login() {
   });
 
   return (
-    <div class="login-container">
-      <h1>Login to Your Application</h1>
-      <p>Please sign in with your Google account to continue</p>
-      <div ref={(el) => (googleSignInButtonRef = el)}></div>
-    </div>
+    <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-purple-100 px-4">
+    <div class="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full text-center space-y-6">
+    <h1 class="text-2xl font-bold text-gray-800">Login to Your Application</h1>
+    <p class="text-gray-600">Please sign in with your Google account to continue</p>
+    <div ref={(el) => (googleSignInButtonRef = el)} class="flex justify-center"></div>
+  </div>
+</div>
+
   );
 }

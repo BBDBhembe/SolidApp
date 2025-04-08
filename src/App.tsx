@@ -4,6 +4,8 @@ import Skills from './pages/Skills';
 import Login from "./components/Login";
 import { isAuthenticated } from "./auth";
 import { onMount } from "solid-js";
+import Dashboard from './components/Dashboard';
+
 
 // Protection wrapper for routes
 function ProtectedRoute(props: { children: any }) {
@@ -27,7 +29,8 @@ function App() {
     </nav> */}
     <Router>
       <Route path="/*" component={Login} />
-      {/* <Route path="/projects" component={Project} />
+      <Route path="/dashboard" component={Dashboard} />
+      {/* {/* <Route path="/projects" component={Project} /> */}
       <Route path="/skills" component={Skills} /> */}
       {/* <h1>welcome</h1> */}
    

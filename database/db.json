@@ -33,11 +33,6 @@
   ],
   "skills": [
     {
-      "id": "1",
-      "name": "Skill A",
-      "description": "Description for Skill A"
-    },
-    {
       "id": "2",
       "name": "Skill B",
       "description": "Description for Skill B"

@@ -1,0 +1,57 @@
+{
+    "projects": [
+      {
+        "id": 1,
+        "name": "Project A",
+        "description": "Description for Project A"
+      },
+      {
+        "id": 2,
+        "name": "Project B",
+        "description": "Description for Project B"
+      },
+      {
+        "id": 3,
+        "name": "Project C",
+        "description": "Description for Project C"
+      },
+      {
+        "id": 4,
+        "name": "Project D",
+        "description": "Description for Project D"
+      },
+      {
+        "id": 5,
+        "name": "Project E",
+        "description": "Description for Project E"
+      }
+    ],
+    "skills": [
+      {
+        "id": 1,
+        "name": "Skill A",
+        "description": "Description for Skill A"
+      },
+      {
+        "id": 2,
+        "name": "Skill B",
+        "description": "Description for Skill B"
+      },
+      {
+        "id": 3,
+        "name": "Skill C",
+        "description": "Description for Skill C"
+      },
+      {
+        "id": 4,
+        "name": "Skill D",
+        "description": "Description for Skill D"
+      },
+      {
+        "id": 5,
+        "name": "Skill E",
+        "description": "Description for Skill E"
+      }
+    ]
+  }
+  

@@ -1,18 +1,37 @@
-import { Router, Route } from '@solidjs/router';
+import { Router, Route, useNavigate } from '@solidjs/router';
 import Project from './pages/Projects';
 import Skills from './pages/Skills';
+import Login from "./components/Login";
+import { isAuthenticated } from "./auth";
+import { onMount } from "solid-js";
+
+// Protection wrapper for routes
+function ProtectedRoute(props: { children: any }) {
+  const navigate = useNavigate();
+  
+  onMount(() => {
+    if (!isAuthenticated()) {
+      navigate("/login", { replace: true });
+    }
+  });
+  
+  return isAuthenticated() ? props.children : null;
+}
 
 function App() {
 
   return (<>
-    <nav class="nav">
+    {/* <nav class="nav">
       <a href='/projects' class="nav-link">Projects</a>
       <a href='/skills' class="nav-link">Skills</a>
-    </nav>
+    </nav> */}
     <Router>
-      <Route path="/projects" component={Project} />
-      <Route path="/skills" component={Skills} />
-      <h1>welcome</h1>
+      <Route path="/*" component={Login} />
+      {/* <Route path="/projects" component={Project} />
+      <Route path="/skills" component={Skills} /> */}
+      {/* <h1>welcome</h1> */}
+   
+      
     </Router></>
   )
 }

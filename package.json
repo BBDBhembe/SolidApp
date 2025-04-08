@@ -13,6 +13,7 @@
     "@solidjs/router": "^0.15.3",
     "axios": "^1.8.4",
     "json-server": "^1.0.0-beta.3",
+    "jwt-decode": "^4.0.0",
     "solid-js": "^1.9.5"
   },
   "devDependencies": {

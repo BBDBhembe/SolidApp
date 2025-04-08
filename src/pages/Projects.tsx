@@ -15,7 +15,6 @@ export default function Projects() {
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {projects().map((project) => (
                     <div id={`project-${project.id}`} class="border rounded-lg p-4 shadow-md">
-                        <img src={project.image} alt={project.title} class="w-full h-48 object-cover rounded-t-lg" />
                         <h2 class="text-xl font-semibold mt-2">{project.title}</h2>
                         <p class="text-gray-600">{project.description}</p>
                     </div>

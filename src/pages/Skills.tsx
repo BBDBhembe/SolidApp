@@ -15,7 +15,6 @@ export default function SkillsPage() {
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {skills().map((skill) => (
                     <div id={`skill-${skill.id}`} class="border rounded-lg p-4 shadow-md">
-                        <img src={skill.image} alt={skill.title} class="w-full h-48 object-cover rounded-t-lg" />
                         <h2 class="text-xl font-semibold mt-2">{skill.title}</h2>
                         <p class="text-gray-600">{skill.description}</p>
                     </div>

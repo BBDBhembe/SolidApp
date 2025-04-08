@@ -1,35 +1,19 @@
-import { createSignal } from 'solid-js'
-import solidLogo from './assets/solid.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Router, Route } from '@solidjs/router';
+import Project from './pages/Projects';
+import Skills from './pages/Skills';
 
 function App() {
-  const [count, setCount] = createSignal(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} class="logo" alt="Vite logo" />
-        </a>
-        <a href="https://solidjs.com" target="_blank">
-          <img src={solidLogo} class="logo solid" alt="Solid logo" />
-        </a>
-      </div>
-      <h1>Vite + Solid</h1>
-      <div class="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count()}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p class="read-the-docs">
-        Click on the Vite and Solid logos to learn more
-      </p>
-    </>
+    <Router>
+      <nav class="nav">
+        <a href='/projects' class="nav-link">Projects</a>
+        <a href='/skills' class="nav-link">Skills</a>
+      </nav>
+      <Route path="/projects" component={Project} />
+      <Route path="/skills" component={Skills} />
+    </Router>
   )
 }
 
-export default App
+export default App;

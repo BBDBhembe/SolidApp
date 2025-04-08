@@ -6,7 +6,7 @@ export default function Projects() {
 
     createEffect(async () => {
         const response = await projectApi.getAll();
-        setProjects(response);
+        setProjects(response.data);
     });
 
     return (

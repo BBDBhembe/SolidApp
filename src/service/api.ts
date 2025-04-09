@@ -1,20 +1,19 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'https://localhost:3000',
+    baseURL: 'http://localhost:3000',
 });
+
 
 export interface Project {
     id: number;
     title: string;
-    image: string;
     description: string;
 }
 
 export interface Skills {
     id: number;
     title: string;
-    image: string;
     description: string;
 }
 

@@ -23,20 +23,16 @@ export default function Login() {
     const decoded = jwtDecode(response.credential);
     console.log("Decoded JWT:", decoded);
 
-    // Set user and authentication state
     setUser(decoded);
     setIsAuthenticated(true);
 
-    // Redirect to dashboard using router navigation
     navigate("/dashboard", { replace: true });
   };
 
-  // Load the script once on mount
   createEffect(() => {
     loadGoogleScript();
   });
 
-  // Initialize Google button when script loads and ref is available
   createEffect(() => {
     if (isScriptLoaded() && googleSignInButtonRef) {
       window.google.accounts.id.initialize({

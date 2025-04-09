@@ -1,21 +1,18 @@
 import { Router, Route, useNavigate } from '@solidjs/router';
-import Login from "./components/Login";
 import { isAuthenticated } from "./auth";
-import { onMount } from "solid-js";
+import Login from "./components/Login";
 import Dashboard from './components/Dashboard';
 
-
-// Protection wrapper for routes
-function ProtectedRoute(props: { children: any }) {
+export function ProtectedRoute(props: { component: any }) {
   const navigate = useNavigate();
 
-  onMount(() => {
-    if (!isAuthenticated()) {
-      navigate("/login", { replace: true });
-    }
-  });
+  if (!isAuthenticated()) {
+    navigate("/", { replace: true });
+    return null;
+  }
 
-  return isAuthenticated() ? props.children : null;
+  const Component = props.component;
+  return <Component />;
 }
 
 function App() {
@@ -24,7 +21,7 @@ function App() {
     <>
       <Router>
         <Route path="/*" component={Login} />
-        <Route path="/dashboard" component={Dashboard} />
+        <Route path="/dashboard" component={() => <ProtectedRoute component={Dashboard} />} />
       </Router>
     </>
   )

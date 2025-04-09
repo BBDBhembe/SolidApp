@@ -4,13 +4,13 @@ import Projects from "../pages/Projects";
 import { user, setUser, setIsAuthenticated } from "../auth";
 import logoutIcon from "../assets/logout.png";
 
-export default function Dashboard(props: { onLogout: () => void }) {
+export default function Dashboard() {
   const [activeTab, setActiveTab] = createSignal<"skills" | "projects">("skills");
 
   const handleLogout = () => {
     setUser(null);
     setIsAuthenticated(false);
-    props.onLogout();
+    window.location.href = "/";
   };
 
   return (
@@ -47,7 +47,7 @@ export default function Dashboard(props: { onLogout: () => void }) {
             alt="Logout Icon"
             class="w-5 h-5"
           />
-          Sign Out
+          Logout
         </button>
       </aside>
 
